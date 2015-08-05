@@ -1,10 +1,16 @@
 package com.example.panlin_pan.myapplication;
 
+import android.content.ContentValues;
+import android.content.CursorLoader;
+import android.database.Cursor;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class StudentActivity extends ActionBarActivity {
@@ -38,11 +44,30 @@ public class StudentActivity extends ActionBarActivity {
     }
 
     public void onClickAddName(View view){
+        ContentValues values = new ContentValues();
+        values.put(MyContentProvider1.Name,
+                ((EditText)findViewById(R.id.txtName)).getText().toString());
 
+        values.put(MyContentProvider1.GRADE,
+                ((EditText)findViewById(R.id.txtGrade)).getText().toString());
+
+        Uri uri = getContentResolver().insert(MyContentProvider1.CONTENT_URI,values);
+
+        Toast.makeText(getBaseContext(),uri.toString(),Toast.LENGTH_LONG).show();
     }
 
     public void onClickRetrieveStudents(View view){
+        String URL = "content://com.example.panlin_pan.myapplication.MyContentProvider1/students";
+        Uri students = Uri.parse(URL);
+        Cursor c = managedQuery(students,null,null,null,"name");
+        if (c.moveToFirst()){
+            do {
+                Toast.makeText(this,
+                        c.getString(c.getColumnIndex(MyContentProvider1.ID))+
+                ", "+c.getString(c.getColumnIndex(MyContentProvider1.Name))+
+                ", "+c.getString(c.getColumnIndex(MyContentProvider1.GRADE)),Toast.LENGTH_LONG).show();
 
-
+            }while (c.moveToNext());
+        }
     }
 }

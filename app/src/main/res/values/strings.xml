@@ -16,5 +16,7 @@
     <string name="start_service">Start Service</string>
     <string name="stop_service">Stop Service</string>
     <string name="MyBroadcast">Broadcast</string>
+    <string name="title_activity_student">StudentActivity</string>
+    <string name="btnStudentActivityText">StudentActivity</string>
 
 </resources>

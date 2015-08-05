@@ -61,6 +61,9 @@ public class MainActivity extends ActionBarActivity {
     public void getPlaylistActivity(View view){
         startActivity(new Intent(getApplicationContext(),PlaylistActivity.class));
     }
+    public void getStudentActivity(View view){
+        startActivity(new Intent(getApplicationContext(),StudentActivity.class));
+    }
 
     public void startService(View view){
         startService(new Intent(getBaseContext(), MyService1.class));

@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.panlin_pan.myapplication.StudentActivity">
+
+
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Name" android:id="@+id/sName"/>
+
+    <EditText android:id="@+id/txtName"
+        android:layout_below="@+id/sName"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent" />
+
+
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Grade"
+        android:text="Grade"
+        android:layout_below="@+id/txtName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="41dp" />
+
+    <EditText android:id="@+id/txtGrade"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/Grade"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <Button android:text="Add Name"
+        android:id="@+id/btnAdd"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickAddName"
+        android:layout_below="@+id/txtGrade"
+        android:layout_alignBaseline="@+id/btnRetrieve"
+        android:layout_alignBottom="@+id/btnRetrieve"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button android:text="Retrieve Students"
+        android:id="@+id/btnRetrieve"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickRetrieveStudents"
+        android:layout_below="@+id/btnAdd"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="41dp" />
+</RelativeLayout>

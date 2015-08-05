@@ -32,13 +32,26 @@
             android:name=".PlayerActivity"
             android:label="@string/title_activity_player" >
         </activity>
-        <service android:name=".MyService1"></service>
-        <receiver android:name=".MyBroadcastReceiver1">
+
+        <service android:name=".MyService1" />
+
+        <receiver android:name=".MyBroadcastReceiver1" >
             <intent-filter>
-                <!--action android:name="android.intent.action.BOOT_COMPLETED"></action-->
-                <action android:name="com.panlin.Custom_Intent"></action>
+
+                <!-- action android:name="android.intent.action.BOOT_COMPLETED"></action -->
+                <action android:name="com.panlin.Custom_Intent" />
             </intent-filter>
         </receiver>
+
+        <provider
+            android:name=".MyContentProvider1"
+            android:authorities="com.example.panlin_pan.myapplication.MyContentProvider1" >
+        </provider>
+
+        <activity
+            android:name=".StudentActivity"
+            android:label="@string/title_activity_student" >
+        </activity>
     </application>
 
 </manifest>

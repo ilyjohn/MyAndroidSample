@@ -24,7 +24,7 @@ public class MyContentProvider1 extends ContentProvider {
     static final String URL="content://"+PROVIDER_NAME+"/students";
     static final Uri CONTENT_URI =Uri.parse(URL);
 
-    static final String ID=" id";
+    static final String ID="_id";
     static final String Name="name";
     static final String GRADE="Grade";
 

@@ -1,9 +1,15 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:scrollbars = "vertical"
+    android:scrollbarStyle="insideInset">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivityFragment">
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivityFragment">
 
     <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,41 +55,42 @@
         android:layout_height="wrap_content"
         android:text="@string/start_service"
         android:onClick="startService"
-        android:layout_below="@+id/btnPlayList"
+        android:layout_above="@+id/btnStopService"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="68dp" />
+        android:layout_alignParentStart="true" />
     <Button android:id="@+id/btnStopService"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/stop_service"
         android:onClick="stopService"
-    android:layout_below="@+id/btnStartService"
-    android:layout_alignParentRight="true"
-    android:layout_alignParentEnd="true" />
+        android:layout_above="@+id/btnBroadcast"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="44dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/MyBroadcast"
         android:id="@+id/btnBroadcast"
-        android:layout_below="@+id/btnStopService"
+        android:onClick="myBroadcastIntent"
+        android:nestedScrollingEnabled="false"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/btnStopService"
-        android:layout_alignEnd="@+id/btnStopService"
-        android:onClick="myBroadcastIntent"
-        android:nestedScrollingEnabled="false" />
+        android:layout_marginBottom="70dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btnStudentActivityText"
         android:id="@+id/button2"
-        android:layout_below="@+id/btnPlayList"
+        android:onClick="getStudentActivity"
+        android:layout_above="@+id/btnStartService"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="getStudentActivity" />
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
+
+</ScrollView>

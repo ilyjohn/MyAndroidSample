@@ -1,7 +1,9 @@
 package com.example.panlin_pan.myapplication;
 
+import android.app.LoaderManager;
 import android.content.ContentValues;
 import android.content.CursorLoader;
+import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
@@ -13,7 +15,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class StudentActivity extends ActionBarActivity {
+public class StudentActivity extends ActionBarActivity implements
+        LoaderManager.LoaderCallbacks<Cursor>{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,17 +60,33 @@ public class StudentActivity extends ActionBarActivity {
     }
 
     public void onClickRetrieveStudents(View view){
+
+        getSupportLoaderManager().initLoader(1,null,null);
+    }
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         String URL = "content://com.example.panlin_pan.myapplication.MyContentProvider1/students";
         Uri students = Uri.parse(URL);
-        Cursor c = managedQuery(students,null,null,null,"name");
-        if (c.moveToFirst()){
-            do {
-                Toast.makeText(this,
-                        c.getString(c.getColumnIndex(MyContentProvider1.ID))+
-                ", "+c.getString(c.getColumnIndex(MyContentProvider1.Name))+
-                ", "+c.getString(c.getColumnIndex(MyContentProvider1.GRADE)),Toast.LENGTH_LONG).show();
+        return  new CursorLoader(this,students,null,null,null,"name");
+    }
 
-            }while (c.moveToNext());
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor c) {
+        c.moveToFirst();
+        StringBuilder res = new StringBuilder();
+        while (!c.isAfterLast()) {
+            res.append("\n" + c.getString(c.getColumnIndex(MyContentProvider1.ID))
+                    + "-" + c.getString(c.getColumnIndex(MyContentProvider1.Name))
+                    + "-" + c.getString(c.getColumnIndex(MyContentProvider1.GRADE)));
+
+            c.moveToNext();
         }
+        Toast.makeText(getBaseContext(),res,Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+
     }
 }

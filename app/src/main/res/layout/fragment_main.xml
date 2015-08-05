@@ -65,8 +65,7 @@
         android:onClick="stopService"
         android:layout_above="@+id/btnBroadcast"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="44dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -88,7 +87,7 @@
         android:text="@string/btnStudentActivityText"
         android:id="@+id/button2"
         android:onClick="getStudentActivity"
-        android:layout_above="@+id/btnStartService"
+        android:layout_below="@+id/btnPlayList"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>

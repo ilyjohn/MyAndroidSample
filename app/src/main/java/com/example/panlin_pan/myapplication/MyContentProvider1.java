@@ -26,9 +26,10 @@ public class MyContentProvider1 extends ContentProvider {
 
     static final String ID="_id";
     static final String Name="name";
-    static final String GRADE="Grade";
+    static final String GRADE="grade";
 
-    private static HashMap<String,String> Student_Project_Map;
+    private static HashMap<String,String> Student_Project_Map =
+            new HashMap<String,String>();
 
     static final int Students = 1;
     static final int Student_ID=2;
@@ -68,6 +69,9 @@ public class MyContentProvider1 extends ContentProvider {
 
     @Override
     public boolean onCreate() {
+        Student_Project_Map.put(MyContentProvider1.ID,MyContentProvider1.ID);
+        Student_Project_Map.put(MyContentProvider1.Name,MyContentProvider1.Name);
+        Student_Project_Map.put(MyContentProvider1.GRADE,MyContentProvider1.GRADE);
         Context context = getContext();
         DatabaseHelper dbHelper= new DatabaseHelper(context);
         /*

@@ -47,7 +47,7 @@ public class MyContentProvider1 extends ContentProvider {
     static final int Database_Version=1;
     static final String Create_DB_Table_Sql="" +
             "CREATE TABLE " + Student_Table_Name +
-            "(_id INTEGER PRIMARY KEY AUTOINCREASEMENT," +
+            "(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "name TEXT NOT NULL," +
             "grade TEXT NOT NULL)"
             ;

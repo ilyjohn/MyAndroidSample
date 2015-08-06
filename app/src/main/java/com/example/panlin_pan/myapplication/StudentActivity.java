@@ -53,7 +53,7 @@ public class StudentActivity extends ActionBarActivity {
 
         Uri uri = getContentResolver().insert(MyContentProvider1.CONTENT_URI,values);
 
-        Toast.makeText(getBaseContext(),uri.toString(),Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(),uri.toString(),Toast.LENGTH_SHORT).show();
     }
 
     public void onClickRetrieveStudents(View view){
@@ -66,7 +66,7 @@ public class StudentActivity extends ActionBarActivity {
                 Toast.makeText(this,
                         c.getString(c.getColumnIndex(MyContentProvider1.ID))+
                 ", "+c.getString(c.getColumnIndex(MyContentProvider1.Name))+
-                ", "+c.getString(c.getColumnIndex(MyContentProvider1.GRADE)),Toast.LENGTH_LONG).show();
+                ", "+c.getString(c.getColumnIndex(MyContentProvider1.GRADE)),Toast.LENGTH_SHORT).show();
 
             }while (c.moveToNext());
         }

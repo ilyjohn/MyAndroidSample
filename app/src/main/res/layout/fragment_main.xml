@@ -1,95 +1,68 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:fillViewport="true"
-    android:scrollbars = "vertical"
-    android:scrollbarStyle="insideInset">
+    tools:context=".MainActivityFragment 1">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView  android:layout_width="fill_parent"
+    android:layout_height="200dp">
 
-    tools:context=".MainActivityFragment">
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
 
     <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView" />
     <Button android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="@dimen/activity_Bluetooth_marginTop"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_width="fill_parent"
         android:id="@+id/btnBluetooth"
         android:text="@string/BluetoothText"
-        android:onClick="getBluetoothActivity"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:onClick="getBluetoothActivity" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/btnWifi"
         android:id="@+id/button"
-        android:layout_below="@+id/btnBluetooth"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:onClick="getWifiActivity" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/btnPlayListTest"
         android:id="@+id/btnPlayList"
-        android:onClick="getPlaylistActivity"
-        android:layout_below="@+id/button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button" />
+        android:onClick="getPlaylistActivity" />
 
     <Button android:id="@+id/btnStartService"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/start_service"
-        android:onClick="startService"
-        android:layout_above="@+id/btnStopService"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:onClick="startService" />
+
     <Button android:id="@+id/btnStopService"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/stop_service"
-        android:onClick="stopService"
-        android:layout_above="@+id/btnBroadcast"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:onClick="stopService"  />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/MyBroadcast"
         android:id="@+id/btnBroadcast"
-        android:onClick="myBroadcastIntent"
-        android:nestedScrollingEnabled="false"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="70dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:onClick="myBroadcastIntent" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/btnStudentActivityText"
         android:id="@+id/button2"
-        android:onClick="getStudentActivity"
-        android:layout_below="@+id/btnPlayList"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-</RelativeLayout>
+        android:onClick="getStudentActivity"  />
+</LinearLayout>
 
 </ScrollView>
+
+</LinearLayout>

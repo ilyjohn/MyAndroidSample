@@ -1,6 +1,12 @@
 package com.example.panlin_pan.myapplication;
 
+import android.annotation.TargetApi;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,11 +16,14 @@ import android.util.Log;
 
 public class MainActivity extends ActionBarActivity {
     String msg = "Android : ";
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(msg," The onCreate() event");
+        Log.d(msg, " The onCreate() event");
+
+
     }
     @Override protected void onStart() {
         super.onStart(); Log.d(msg, "The onStart() event");

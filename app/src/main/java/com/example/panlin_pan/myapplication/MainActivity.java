@@ -35,7 +35,7 @@ public class MainActivity extends ActionBarActivity {
 
     protected void onDestroy(){
         super.onDestroy();
-        Log.d(msg,"Main destroy.");
+        Log.d(msg, "Main destroy.");
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -53,7 +53,13 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent("android.intent.action.Sweet"));
             return true;
+        }else if (id == R.id.menuSweet){
+            Intent intent = new Intent(getApplicationContext(),BluetoothActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.menuToast){
+            startActivity(new Intent(getApplicationContext(),WifiActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

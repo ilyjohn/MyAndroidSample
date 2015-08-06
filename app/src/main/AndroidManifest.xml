@@ -52,6 +52,14 @@
             android:name=".StudentActivity"
             android:label="@string/title_activity_student" >
         </activity>
+        <activity
+            android:name=".Sweet"
+            android:label="Sweet" >
+            <intent-filter>
+                <action android:name="android.intent.action.Sweet"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My Application_NewModule</string>
+    <string name="title_bookitem_detail">BookItem Detail</string>
+</resources>

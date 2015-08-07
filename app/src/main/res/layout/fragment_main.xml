@@ -6,7 +6,7 @@
     tools:context=".MainActivityFragment 1">
 
 <ScrollView  android:layout_width="fill_parent"
-    android:layout_height="200dp">
+    android:layout_height="wrap_content">
 
 <LinearLayout
     android:layout_width="fill_parent"
@@ -23,10 +23,11 @@
         android:onClick="getBluetoothActivity" />
 
     <Button
+        style="@style/CustomButtonStyle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/btnWifi"
-        android:id="@+id/button"
+        android:id="@+id/btnWifi"
         android:onClick="getWifiActivity" />
 
     <Button
@@ -61,8 +62,35 @@
         android:text="@string/btnStudentActivityText"
         android:id="@+id/button2"
         android:onClick="getStudentActivity"  />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="DragDrop"
+        android:id="@+id/btnDragDropTest"
+        android:layout_gravity="bottom" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Notification "
+        android:id="@+id/btnSendNotify"
+        android:layout_gravity="bottom" />
+
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="New Button 3"
+        android:id="@+id/button6"
+        android:layout_gravity="bottom" />
+
+
+
 </LinearLayout>
 
 </ScrollView>
+
 
 </LinearLayout>

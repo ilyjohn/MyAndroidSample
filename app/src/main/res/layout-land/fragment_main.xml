@@ -66,4 +66,15 @@
 
 </ScrollView>
 
+    <FrameLayout android:id="@+id/myContent"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            layout="@layout/activity_wifi" />
+
+    </FrameLayout>
+
+
 </LinearLayout>

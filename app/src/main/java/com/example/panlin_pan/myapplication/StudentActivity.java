@@ -1,5 +1,6 @@
 package com.example.panlin_pan.myapplication;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.CursorLoader;
 import android.database.Cursor;
@@ -13,7 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class StudentActivity extends ActionBarActivity {
+public class StudentActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

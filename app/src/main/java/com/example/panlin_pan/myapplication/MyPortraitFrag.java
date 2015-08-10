@@ -10,14 +10,34 @@ import android.view.ViewGroup;
  * Created by panlin_pan on 8/10/2015.
  */
 public class MyPortraitFrag extends Fragment {
+    public MyPortraitFrag() {
+    }
+
+    public String getWhich() {
+        return Which;
+    }
+
+    public void setWhich(String which) {
+        Which = which;
+    }
+
+    String Which;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //        return super.onCreateView(inflater, container, savedInstanceState);
-        String which = savedInstanceState.getString("which");
-        if (which=="2")
-            return inflater.inflate(R.layout.my_portrait_frag2,container,false);
-        else
-            return inflater.inflate(R.layout.my_portrait_frag,container,false);
+        String which = getWhich();
+        Bundle b = getArguments();
+        which = b.getString("which");
+        if(savedInstanceState == null){
+            return inflater.inflate(R.layout.my_portrait_frag2, container, false);
+
+        }else {
+            which = savedInstanceState.getString("which");
+            if (which == "2")
+                return inflater.inflate(R.layout.my_portrait_frag2, container, false);
+            else
+                return inflater.inflate(R.layout.my_portrait_frag, container, false);
+        }
     }
 
 }

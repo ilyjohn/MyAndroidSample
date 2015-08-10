@@ -22,13 +22,15 @@ public class MyRotateActivity extends Activity {
         if (configuration.orientation== Configuration.ORIENTATION_LANDSCAPE){
             MyLandscapeFrag landscapeFrag = new MyLandscapeFrag();
             fragmentTransaction.replace(android.R.id.content,landscapeFrag);
-            MyLandscapeFrag2 landscape2 = new MyLandscapeFrag2();
+
+            MyLandscapeFrag2 landscape2 =  MyLandscapeFrag2.newInstance("l2");
             fragmentTransaction.add(android.R.id.content,landscape2);
         }else
         {
             Bundle b = new Bundle();
             b.putString("which","2");
             MyPortraitFrag portrait = new MyPortraitFrag();
+            portrait.setWhich("2");
             portrait.setArguments(b);
             fragmentTransaction.replace(android.R.id.content,portrait);
         }

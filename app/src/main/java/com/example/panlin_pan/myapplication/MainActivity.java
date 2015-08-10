@@ -42,9 +42,18 @@ public class MainActivity extends ActionBarActivity {
         btnDragDropTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),DragDropActivity.class));
+                startActivity(new Intent(getApplicationContext(), DragDropActivity.class));
             }
         });
+
+        Button btnLandPort = (Button)findViewById(R.id.btnLandPort);
+        btnLandPort.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MyRotateActivity.class));
+            }
+        });
+
 
         Button btnSendNotify = (Button)findViewById(R.id.btnSendNotify);
         final Activity self = this;

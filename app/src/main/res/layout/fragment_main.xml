@@ -82,8 +82,8 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="New Button 3"
-        android:id="@+id/button6"
+        android:text="Land/port"
+        android:id="@+id/btnLandPort"
         android:layout_gravity="bottom" />
 
 

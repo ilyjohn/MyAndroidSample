@@ -19,19 +19,25 @@ public class MyRotateActivity extends Activity {
 
         Configuration configuration= getResources().getConfiguration();
 
-        if (configuration.orientation== Configuration.ORIENTATION_LANDSCAPE){
-            MyLandscapeFrag landscapeFrag = new MyLandscapeFrag();
-            fragmentTransaction.replace(android.R.id.content,landscapeFrag);
+        MyLandscapeFrag landscapeFrag = new MyLandscapeFrag();
+        MyLandscapeFrag2 landscape2 =  MyLandscapeFrag2.newInstance("l2");
 
-            MyLandscapeFrag2 landscape2 =  MyLandscapeFrag2.newInstance("l2");
-            fragmentTransaction.add(android.R.id.content,landscape2);
+        Bundle b = new Bundle();
+        b.putString("which","2");
+        MyPortraitFrag portrait = new MyPortraitFrag();
+        portrait.setWhich("2");
+        portrait.setArguments(b);
+        if (configuration.orientation== Configuration.ORIENTATION_LANDSCAPE){
+            fragmentTransaction.remove(portrait);
+
+            fragmentTransaction.replace(android.R.id.content, landscapeFrag);
+
+            fragmentTransaction.add(android.R.id.content, landscape2);
+
         }else
         {
-            Bundle b = new Bundle();
-            b.putString("which","2");
-            MyPortraitFrag portrait = new MyPortraitFrag();
-            portrait.setWhich("2");
-            portrait.setArguments(b);
+            fragmentTransaction.remove(landscapeFrag);
+            fragmentTransaction.remove(landscape2);
             fragmentTransaction.replace(android.R.id.content,portrait);
         }
 

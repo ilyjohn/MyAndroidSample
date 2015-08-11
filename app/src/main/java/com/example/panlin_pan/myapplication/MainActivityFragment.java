@@ -32,7 +32,7 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        View content = getActivity().findViewById(R.id.myContent);
+        /*View content = getActivity().findViewById(R.id.myContent);
         if (content!=null&& content.getVisibility()==View.VISIBLE){
             Button btnWifi = (Button)getActivity().findViewById(R.id.btnWifi);
             if(btnWifi!=null) {
@@ -51,6 +51,6 @@ public class MainActivityFragment extends Fragment {
                 });
             }
 
-        }
+        }*/
     }
 }

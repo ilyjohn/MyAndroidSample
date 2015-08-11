@@ -1,80 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="horizontal"
-    tools:context=".MainActivityFragment 1">
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="6"
+    android:rowCount="4">
 
-<ScrollView  android:layout_width="fill_parent"
-    android:layout_height="200dp">
 
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
-
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+    <Button
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
-    <Button android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:id="@+id/btnBluetooth"
         android:text="@string/BluetoothText"
-        android:onClick="getBluetoothActivity" />
+        android:onClick="getBluetoothActivity"
+        android:layout_row="0"
+        android:layout_column="0" />
 
     <Button
-        android:layout_width="fill_parent"
+        style="@style/CustomButtonStyle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnWifi"
-        android:id="@+id/button"
-        android:onClick="getWifiActivity" />
+        android:id="@+id/btnWifi"
+        android:onClick="getWifiActivity"
+        android:layout_row="0"
+        android:layout_column="1" />
 
     <Button
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnPlayListTest"
         android:id="@+id/btnPlayList"
-        android:onClick="getPlaylistActivity" />
-
-    <Button android:id="@+id/btnStartService"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/start_service"
-        android:onClick="startService" />
-
-    <Button android:id="@+id/btnStopService"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/stop_service"
-        android:onClick="stopService"  />
+        android:onClick="getPlaylistActivity"
+        android:layout_row="0"
+        android:layout_column="2" />
 
     <Button
-        android:layout_width="fill_parent"
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_service"
+        android:onClick="startService"
+        android:layout_row="1"
+        android:layout_column="0" />
+
+    <Button
+        android:id="@+id/btnStopService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_service"
+        android:onClick="stopService"
+        android:layout_row="1"
+        android:layout_column="1" />
+
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/MyBroadcast"
         android:id="@+id/btnBroadcast"
-        android:onClick="myBroadcastIntent" />
+        android:onClick="myBroadcastIntent"
+        android:layout_row="1"
+        android:layout_column="2" />
 
     <Button
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnStudentActivityText"
-        android:id="@+id/button2"
-        android:onClick="getStudentActivity"  />
-</LinearLayout>
+        android:id="@+id/btnStudentActivity"
+        android:onClick="getStudentActivity"
+        android:layout_row="2"
+        android:layout_column="0" />
 
-</ScrollView>
-
-    <FrameLayout android:id="@+id/myContent"
+    <Button
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
-        <include
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            layout="@layout/activity_wifi" />
+        android:layout_height="wrap_content"
+        android:text="DragDrop"
+        android:id="@+id/btnDragDropTest"
+        android:layout_gravity="bottom"
+        android:layout_row="2"
+        android:layout_column="1" />
 
-    </FrameLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification "
+        android:id="@+id/btnSendNotify"
+        android:layout_gravity="bottom"
+        android:layout_row="2"
+        android:layout_column="2" />
 
-
-</LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Land/port"
+        android:id="@+id/btnLandPort"
+        android:layout_gravity="bottom"
+        android:layout_row="2"
+        android:layout_column="3" />
+</GridLayout>

@@ -1,6 +1,7 @@
 package com.example.panlin_pan.myapplication;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.res.Configuration;
@@ -8,7 +9,20 @@ import android.os.Bundle;
 
 
 public class MyRotateActivity extends Activity {
-
+void detachAllFragments(FragmentManager fragmentManager,FragmentTransaction fragmentTransaction){
+    Fragment fragment = fragmentManager.findFragmentById(android.R.id.content);
+    if(fragment!=null){
+        fragmentTransaction.detach(fragment);
+    }
+    fragment = fragmentManager.findFragmentById(android.R.id.content);
+    if(fragment!=null){
+        fragmentTransaction.detach(fragment);
+    }
+    fragment = fragmentManager.findFragmentById(android.R.id.content);
+    if(fragment!=null){
+        fragmentTransaction.detach(fragment);
+    }
+}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +37,13 @@ public class MyRotateActivity extends Activity {
         MyLandscapeFrag2 landscape2 =  MyLandscapeFrag2.newInstance("l2");
 
         Bundle b = new Bundle();
-        b.putString("which","2");
+        b.putString("which", "2");
         MyPortraitFrag portrait = new MyPortraitFrag();
         portrait.setWhich("2");
         portrait.setArguments(b);
+        this.detachAllFragments(fragmentManager,fragmentTransaction);
         if (configuration.orientation== Configuration.ORIENTATION_LANDSCAPE){
-            fragmentTransaction.remove(portrait);
+            //fragmentTransaction.remove(portrait);
 
             fragmentTransaction.replace(android.R.id.content, landscapeFrag);
 
@@ -36,9 +51,9 @@ public class MyRotateActivity extends Activity {
 
         }else
         {
-            fragmentTransaction.remove(landscapeFrag);
-            fragmentTransaction.remove(landscape2);
-            fragmentTransaction.replace(android.R.id.content,portrait);
+            /*fragmentTransaction.remove(landscapeFrag);
+            fragmentTransaction.remove(landscape2);*/
+            fragmentTransaction.replace(android.R.id.content, portrait);
         }
 
         fragmentTransaction.commit();

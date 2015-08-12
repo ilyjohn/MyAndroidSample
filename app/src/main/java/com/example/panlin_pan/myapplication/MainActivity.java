@@ -28,6 +28,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.panlin_pan.myapplication.scenario1.FragmentLayout;
+
 public class MainActivity extends ActionBarActivity {
     String msg = "Android : ";
 
@@ -79,7 +81,21 @@ public class MainActivity extends ActionBarActivity {
 
             }
         });
+        Button btnMainDetails = (Button)findViewById(R.id.btnMainDetails);
+        btnMainDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),FragmentLayout.class));
+            }
+        });
 
+        Button btnMap = (Button)findViewById(R.id.btnMap);
+        btnMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),FragmentLayout.class));
+            }
+        });
     }
     @Override protected void onStart() {
         super.onStart(); Log.d(msg, "The onStart() event");

@@ -88,6 +88,20 @@
 
 
 
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Main_Details"
+        android:id="@+id/btnMainDetails"
+        android:layout_gravity="bottom" />
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Map"
+        android:id="@+id/btnMap"
+        android:layout_gravity="bottom" />
 </LinearLayout>
 
 </ScrollView>

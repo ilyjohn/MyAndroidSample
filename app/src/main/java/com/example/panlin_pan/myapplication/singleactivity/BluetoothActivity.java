@@ -1,25 +1,27 @@
-package com.panlin_pan.myapplication.scenario1;
+package com.example.panlin_pan.myapplication.singleactivity;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.panlin_pan.myapplication.R;
 
 
-public class FragmentLayout extends ActionBarActivity {
+public class BluetoothActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment_layout);
+        setContentView(R.layout.activity_bluetooth);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_fragment_layout, menu);
+        getMenuInflater().inflate(R.menu.menu_bluetooth, menu);
         return true;
     }
 
@@ -37,4 +39,5 @@ public class FragmentLayout extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

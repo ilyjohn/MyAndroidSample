@@ -1,4 +1,4 @@
-package com.example.panlin_pan.myapplication;
+package com.example.panlin_pan.myapplication.singleactivity;
 
 import android.app.Activity;
 import android.content.ClipData;
@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.panlin_pan.myapplication.R;
 
 
 public class DragDropActivity extends Activity {

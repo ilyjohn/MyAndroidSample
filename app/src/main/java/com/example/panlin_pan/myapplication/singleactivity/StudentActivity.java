@@ -1,4 +1,4 @@
-package com.example.panlin_pan.myapplication;
+package com.example.panlin_pan.myapplication.singleactivity;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -12,6 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.panlin_pan.myapplication.MyContentProvider1;
+import com.example.panlin_pan.myapplication.R;
 
 
 public class StudentActivity extends Activity {

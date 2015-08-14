@@ -102,6 +102,23 @@
         android:text="Map"
         android:id="@+id/btnMap"
         android:layout_gravity="bottom" />
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Slide Menu"
+        android:id="@+id/btnMenu"
+        android:layout_gravity="bottom" />
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Star Menu"
+        android:id="@+id/btnStarMenu"
+        android:layout_gravity="bottom" />
+
 </LinearLayout>
 
 </ScrollView>

@@ -1,4 +1,4 @@
-package com.panlin_pan.myapplication.scenario1;
+package com.example.panlin_pan.myapplication.scenario_master_details;
 
 import android.app.FragmentTransaction;
 import android.app.ListFragment;

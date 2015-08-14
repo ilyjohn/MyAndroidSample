@@ -1,10 +1,12 @@
-package com.example.panlin_pan.myapplication;
+package com.example.panlin_pan.myapplication.scenario_rotate;
 
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.panlin_pan.myapplication.R;
 
 /**
  * Created by panlin_pan on 8/10/2015.

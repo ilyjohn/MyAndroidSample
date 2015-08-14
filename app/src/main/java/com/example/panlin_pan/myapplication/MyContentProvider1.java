@@ -18,13 +18,12 @@ import java.util.HashMap;
  * Created by panlin_pan on 8/5/2015.
  */
 public class MyContentProvider1 extends ContentProvider {
+    public static final String ID = "_id";
+    public static final String Name = "name";
+    public static final String GRADE = "grade";
     static final String PROVIDER_NAME = "com.example.panlin_pan.myapplication.MyContentProvider1";
     static final String URL = "content://" + PROVIDER_NAME + "/students";
-    static final Uri CONTENT_URI = Uri.parse(URL);
-
-    static final String ID = "_id";
-    static final String Name = "name";
-    static final String GRADE = "grade";
+    public static final Uri CONTENT_URI = Uri.parse(URL);
     static final int Students = 1;
     static final int Student_ID = 2;
     static final UriMatcher uriMatcher;

@@ -33,5 +33,6 @@
     <string name="title_activity_main_activity2">MainActivity2Activity</string>
     <string name="title_activity_fragment_layout">FragmentLayout</string>
     <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_stars_holder">StarsHolderActivity</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.panlin_pan.myapplication.scenario1;
+package com.example.panlin_pan.myapplication.scenario_master_details;
 
 /**
  * Created by panlin_pan on 8/12/2015.

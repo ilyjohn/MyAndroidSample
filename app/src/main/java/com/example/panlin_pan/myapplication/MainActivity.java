@@ -1,34 +1,32 @@
 package com.example.panlin_pan.myapplication;
 
 import android.annotation.TargetApi;
-import android.app.ActionBar;
 import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
-import android.content.ClipData;
-import android.content.ClipDescription;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
-import com.panlin_pan.myapplication.scenario1.FragmentLayout;
+import com.example.panlin_pan.myapplication.scenario_rotate.MyRotateActivity;
+import com.example.panlin_pan.myapplication.scenario_master_details.FragmentLayout;
+import com.example.panlin_pan.myapplication.scenario_master_details.MapActivity;
+import com.example.panlin_pan.myapplication.singleactivity.BluetoothActivity;
+import com.example.panlin_pan.myapplication.singleactivity.DragDropActivity;
+import com.example.panlin_pan.myapplication.singleactivity.PlaylistActivity;
+import com.example.panlin_pan.myapplication.scenario_slidemenu.SlideContainer;
+import com.example.panlin_pan.myapplication.singleactivity.StudentActivity;
+import com.example.panlin_pan.myapplication.singleactivity.WifiActivity;
+import com.example.panlin_pan.myapplication.starsmenu.StarsHolderActivity;
 
 public class MainActivity extends ActionBarActivity {
     String msg = "Android : ";
@@ -93,7 +91,24 @@ public class MainActivity extends ActionBarActivity {
         btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),FragmentLayout.class));
+                startActivity(new Intent(getApplicationContext(),MapActivity.class));
+            }
+        });
+
+
+        Button btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),SlideContainer.class));
+            }
+        });
+
+        Button btnStarMenu = (Button)findViewById(R.id.btnStarMenu);
+        btnStarMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),StarsHolderActivity.class));
             }
         });
     }

@@ -1,4 +1,4 @@
-package com.example.panlin_pan.myapplication;
+package com.example.panlin_pan.myapplication.singleactivity;
 
 import android.content.Intent;
 import android.os.Environment;
@@ -14,6 +14,8 @@ import android.widget.ListView;
 import java.io.File;
 import java.util.ArrayList;
 import android.util.Log;
+
+import com.example.panlin_pan.myapplication.R;
 
 public class PlaylistActivity extends ActionBarActivity {
     ListView lv;

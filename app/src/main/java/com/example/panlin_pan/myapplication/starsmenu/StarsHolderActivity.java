@@ -1,25 +1,39 @@
-package com.example.panlin_pan.myapplication;
+package com.example.panlin_pan.myapplication.starsmenu;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
+import com.example.panlin_pan.myapplication.R;
 
-public class BluetoothActivity extends ActionBarActivity {
+import java.util.ArrayList;
+
+public class StarsHolderActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bluetooth);
+        setContentView(R.layout.activity_stars_holder);
+
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        for (int i = 0; i <20 ; i++) {
+            arrayList.add(i);
+        }
+
+        ListView lv =(ListView) findViewById(R.id.listView);
+        ArrayAdapter<Integer> array2ListView =new ArrayAdapter<Integer>(this,android.R.layout.simple_list_item_activated_1,arrayList);
+        lv.setAdapter(array2ListView);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_bluetooth, menu);
+        getMenuInflater().inflate(R.menu.menu_stars_holder, menu);
         return true;
     }
 
@@ -37,5 +51,4 @@ public class BluetoothActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 }

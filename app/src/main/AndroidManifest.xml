@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MyBaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -20,19 +21,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BluetoothActivity"
+            android:name=".singleactivity.BluetoothActivity"
             android:label="@string/title_activity_bluetooth" >
         </activity>
         <activity
-            android:name=".WifiActivity"
+            android:name=".singleactivity.WifiActivity"
             android:label="@string/title_activity_wifi" >
         </activity>
         <activity
-            android:name=".PlaylistActivity"
+            android:name=".singleactivity.PlaylistActivity"
             android:label="@string/title_activity_playlist" >
         </activity>
         <activity
-            android:name=".PlayerActivity"
+            android:name=".singleactivity.PlayerActivity"
             android:label="@string/title_activity_player" >
         </activity>
 
@@ -52,7 +53,7 @@
         </provider>
 
         <activity
-            android:name=".StudentActivity"
+            android:name=".singleactivity.StudentActivity"
             android:label="@string/title_activity_student"
             android:theme="@style/AppTheme1" >
         </activity>
@@ -66,24 +67,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DragDropActivity"
+            android:name=".singleactivity.DragDropActivity"
             android:label="@string/title_activity_drag_drop" >
         </activity>
         <activity
-            android:name=".MyRotateActivity"
+            android:name=".scenario_rotate.MyRotateActivity"
             android:label="@string/title_activity_my_rotate" >
         </activity>
         <activity
-            android:name="com.panlin_pan.myapplication.scenario1.FragmentLayout"
+            android:name=".scenario_master_details.FragmentLayout"
             android:label="@string/title_activity_fragment_layout" >
         </activity>
         <activity
-            android:name="com.panlin_pan.myapplication.scenario1.DetailActivity"
+            android:name=".scenario_master_details.DetailActivity"
             android:label="DetailActivity" >
         </activity>
         <activity
-            android:name="com.panlin_pan.myapplication.scenario1.MapActivity"
+            android:name=".scenario_master_details.MapActivity"
             android:label="@string/title_activity_map" >
+        </activity>
+        <activity
+            android:name=".scenario_slidemenu.SlideContainer"
+            android:label="SlideMenu" >
+        </activity>
+        <activity
+            android:name=".starsmenu.StarsHolderActivity"
+            android:label="@string/title_activity_stars_holder" >
         </activity>
     </application>
 

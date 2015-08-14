@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.panlin_pan.myapplication.singleactivity.WifiActivity;
+
 /**
  * Created by panlin_pan on 8/7/2015.
  */

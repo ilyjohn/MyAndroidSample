@@ -91,6 +91,7 @@
             android:label="SlideMenu" >
         </activity>
         <activity
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:name=".starsmenu.StarsHolderActivity"
             android:label="@string/title_activity_stars_holder" >
         </activity>

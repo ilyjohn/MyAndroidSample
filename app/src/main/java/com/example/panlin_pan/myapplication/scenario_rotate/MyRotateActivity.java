@@ -49,16 +49,16 @@ void detachAllFragments(FragmentManager fragmentManager,FragmentTransaction frag
         if (configuration.orientation== Configuration.ORIENTATION_LANDSCAPE){
             //fragmentTransaction.remove(portrait);
 
-            fragmentTransaction.add(android.R.id.content, landscapeFrag);
+            fragmentTransaction.replace(android.R.id.content, landscapeFrag);
 
-            fragmentTransaction.add(android.R.id.content, landscape2);
+            fragmentTransaction.replace(android.R.id.content, landscape2);
 
         }else
         {
             /*fragmentTransaction.remove(landscapeFrag);
             fragmentTransaction.remove(landscape2);*/
-            fragmentTransaction.add(android.R.id.content, portrait);
-            fragmentTransaction.add(android.R.id.content, portrait);
+            fragmentTransaction.replace(android.R.id.content, portrait);
+            fragmentTransaction.replace(android.R.id.content, portrait);
         }
 
         fragmentTransaction.commit();

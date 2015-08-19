@@ -1,9 +1,15 @@
 package com.example.panlin_pan.myapplication.starsmenu;
 
+import android.animation.Animator;
 import android.animation.AnimatorSet;
+import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -146,12 +152,81 @@ public class StarsView extends ViewGroup implements View.OnClickListener {
         toggleStarsMenu(2500);
     }
 
-    private void rotateMainBtn(View v, float start, float end, int duration) {
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    private void rotateMainBtn(final View v, float start, float end, int duration) {
         RotateAnimation rotateAnimation = new RotateAnimation(start, end,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         rotateAnimation.setDuration(duration);
         rotateAnimation.setFillAfter(true);
         v.setAnimation(rotateAnimation);
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(v, "translationX", 0f, 200f);
+        objectAnimator.setDuration(1000);
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(v, "translationY", 0f, 200f);
+        objectAnimator2.setDuration(1000);
+
+
+        animatorSet.play(objectAnimator).with(objectAnimator2);
+        animatorSet.addPauseListener(new Animator.AnimatorPauseListener() {
+            @Override
+            public void onAnimationPause(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationResume(Animator animation) {
+
+            }
+        });
+        animatorSet.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+
+                AnimatorSet animatorSet = new AnimatorSet();
+                ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(v, "translationX", 200f, 0f);
+                objectAnimator3.setDuration(1000);
+                ObjectAnimator objectAnimator4 = ObjectAnimator.ofFloat(v, "translationY", 200f, 0f);
+                objectAnimator4.setDuration(1000);
+                animatorSet.play(objectAnimator3).with(objectAnimator4);
+                animatorSet.start();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+        //animatorSet.start();
+
+
+        /*int colorFrome = getResources().getColor(R.color.abc_primary_text_disable_only_material_dark);
+        int colorTo = getResources().getColor(R.color.material_blue_grey_900);*/
+       /* ValueAnimator valueAnimator = ValueAnimator.ofObject(new ArgbEvaluator(), Color.BLACK, Color.WHITE);
+        valueAnimator.setDuration(2500).start();*/
+        ObjectAnimator objectAnimator1 = ObjectAnimator.ofObject(v, "backgroundColor", new ArgbEvaluator(), 0xFFFFFFFF, 0x00000000);
+        objectAnimator1.setDuration(1500).start();
+
+        /*ValueAnimator bgColorAnimator = ValueAnimator.ofInt(0, 255);
+        bgColorAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                v.setBackgroundColor((int) animation.getAnimatedValue());
+            }
+        });
+
+        bgColorAnimator.setDuration(1500);
+        bgColorAnimator.start();*/
     }
 
     public void toggleStarsMenu(int duration) {
@@ -217,11 +292,23 @@ public class StarsView extends ViewGroup implements View.OnClickListener {
 
             child.startAnimation(animationSet);
 
-            AnimatorSet animatorSet = new AnimatorSet();
+           /* AnimatorSet animatorSet = new AnimatorSet();
             ObjectAnimator objectAnimator = new ObjectAnimator();
             objectAnimator.ofFloat(child, "width", 30);
             animatorSet.play(objectAnimator);
-            animatorSet.start();
+            animatorSet.start();*/
+            ValueAnimator valueAnimator = ValueAnimator.ofInt(child.getMeasuredWidth(), 30);
+            valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    int value = (int) animation.getAnimatedValue();
+                    ViewGroup.LayoutParams layoutParams = child.getLayoutParams();
+                    layoutParams.width = value;
+                    child.setLayoutParams(layoutParams);
+                }
+            });
+            valueAnimator.setDuration(2000);
+            //valueAnimator.start();
 
             final int index = i + 1;
             child.setOnClickListener(new OnClickListener() {
@@ -233,6 +320,17 @@ public class StarsView extends ViewGroup implements View.OnClickListener {
                     isOpen = !isOpen;
                 }
             });
+
+            ValueAnimator bgColorAnimator = ValueAnimator.ofInt(Color.RED, Color.WHITE);
+            bgColorAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    child.setBackgroundColor((int) animation.getAnimatedValue());
+                }
+            });
+
+            bgColorAnimator.setDuration(1500);
+            bgColorAnimator.start();
         }
 
         isOpen = !isOpen;

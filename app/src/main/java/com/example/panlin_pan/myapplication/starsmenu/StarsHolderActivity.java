@@ -11,6 +11,7 @@ import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.panlin_pan.myapplication.R;
@@ -48,9 +49,7 @@ public class StarsHolderActivity extends ActionBarActivity {
                 , android.R.layout.simple_list_item_activated_1, arrayList);
         lv.setAdapter(array2ListView);
 
-        Button btn = new Button(this);
-        btn.setText("header");
-        lv.addHeaderView(btn);
+
     }
 
     private void animateListView() {
@@ -64,7 +63,7 @@ public class StarsHolderActivity extends ActionBarActivity {
     public StarsView.OnMenuItemClickListener onMenuItemClick =new StarsView.OnMenuItemClickListener() {
         @Override
         public void onMenuItemClick(View v, int pos) {
-            Toast.makeText(StarsHolderActivity.this, pos + ":" + v.getTag(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(StarsHolderActivity.this, pos + ":" + ((Button)v).getText().toString(), Toast.LENGTH_SHORT).show();
 
         }
     };
